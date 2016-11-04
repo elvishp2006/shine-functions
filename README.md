@@ -1,2 +1,2 @@
 # Shine functions.php
-How to make your a shine functions.php
+How to make a shine functions.php

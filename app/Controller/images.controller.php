@@ -14,7 +14,7 @@ class Images_Controller
 
 	public function add_image_sizes()
 	{
-		add_image_size( 'homepage-card-full', 450, 450, true );
+		add_image_size( 'single-featured', 450, 450, true );
 		add_image_size( 'homepage-card-thumb', 250, 200, true );
 	}
 }

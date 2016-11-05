@@ -27,6 +27,21 @@ class Post
 		return $this->_get_property( $prop );
 	}
 
+	public function the_post_thumbnail( $size = 'thumbnail', $attr = array() )
+	{
+		echo get_the_post_thumbnail( $this->id, $size, $attr );
+	}
+
+	public function the_title()
+	{
+		echo apply_filters( 'the_title', $this->__get( 'title' ) );
+	}
+
+	public function the_content()
+	{
+		echo apply_filters( 'the_content', $this->__get( 'content' ) );
+	}
+
 	private function _get_property( $prop )
 	{
 		if ( isset( $this->$prop ) ) {

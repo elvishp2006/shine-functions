@@ -8,6 +8,7 @@ if ( ! function_exists( 'add_action' ) ) {
 include 'app/vendor/metaboxes.php';
 include 'app/vendor/utils.php';
 
+include 'app/Model/base/post.php';
 include 'app/Controller/base/post-type.php';
 
 include 'app/Controller/events.controller.php';

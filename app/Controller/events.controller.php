@@ -5,9 +5,12 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
+use Shine\Base;
 use Metaboxes;
 
-class Events_Controller extends Post_Type
+include __DIR__ . '/../Model/event.php';
+
+class Events_Controller extends Base\Post_Type
 {
 	public function __construct()
 	{
@@ -18,7 +21,7 @@ class Events_Controller extends Post_Type
 	public function register_post_type()
 	{
 		register_post_type(
-			'event',
+			Event::POST_TYPE,
 			array(
 				'public'    => true,
 				'menu_icon' => 'dashicons-calendar-alt',
@@ -40,7 +43,7 @@ class Events_Controller extends Post_Type
 					'event-local'   => true,
 					'event-horario' => true,
 				),
-				'post_type'        => 'event',
+				'post_type'        => Event::POST_TYPE,
 				'context'          => 'normal',
 				'priority'         => 'high',
 				'title'            => 'Dados',

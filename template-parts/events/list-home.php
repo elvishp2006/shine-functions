@@ -3,19 +3,22 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-get_header();
+use Shine\Theme\Event;
+
+$model = new Event();
+$query = $model->get_query_home( 2 );
+
+if ( ! $query ) {
+	return;
+}
 ?>
 
-<h2>Posts:</h2>
+<h2>Eventos:</h2>
 
 <ul>
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 	<li>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 	</li>
 	<?php endwhile; ?>
 </ul>
-
-<?php get_template_part( 'template-parts/events/list-home' ); ?>
-
-<?php get_footer(); ?>

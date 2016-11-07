@@ -5,11 +5,12 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
+use Shine\Base;
 use Metaboxes;
 
 include __DIR__ . '/../Model/post.php';
 
-class Posts_Controller extends Post_Type
+class Posts_Controller extends Base\Post_Type
 {
 	public function __construct()
 	{
@@ -28,7 +29,7 @@ class Posts_Controller extends Post_Type
 					'post-numero'     => true,
 					'post-cep'        => true,
 				),
-				'post_type'        => 'post',
+				'post_type'        => Post::POST_TYPE,
 				'context'          => 'normal',
 				'priority'         => 'high',
 				'title'            => 'Endereço',

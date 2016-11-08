@@ -8,7 +8,7 @@ use Shine\Theme\Event;
 $model = new Event();
 $query = $model->get_query_home( 2 );
 
-if ( ! $query ) {
+if ( ! $query->have_posts() ) {
 	return;
 }
 ?>
